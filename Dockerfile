@@ -1,6 +1,6 @@
 FROM debian:latest
 
-# vars
+# variables
 ARG UPD="apt-get update"
 ARG UPD_s="sudo $UPD"
 ARG INS="apt-get install"
