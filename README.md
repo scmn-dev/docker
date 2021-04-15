@@ -8,6 +8,12 @@ Docker image of secman
 docker pull secmanx/secman
 ```
 
+> from github packages
+
+```bash
+docker pull docker.pkg.github.com/secman-team/secman-docker/secman:latest
+```
+
 docker repo: _**https://hub.docker.com/r/secmanx/secman**_
 
 ## Our Websites
