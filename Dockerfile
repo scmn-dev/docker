@@ -64,8 +64,9 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x -o nodesource_setup.sh && \
 RUN curl -fsSL https://secman-team.github.io/install.sh | bash
 
 ### zsh ###
-RUN $INS_s zsh
 ENV src=".zshrc"
+
+RUN $INS_s zsh
 RUN zsh && \
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
     $UPD_s && \
@@ -74,7 +75,6 @@ RUN zsh && \
 
 # rm old files
 RUN sudo rm -rf $src
-RUN sudo rm -rf .oh-my-zsh/oh-my-zsh.sh
 
 # wget new files
 RUN wget https://secman-team.github.io/docker/.zshrc
