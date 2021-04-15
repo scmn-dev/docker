@@ -24,6 +24,10 @@ RUN $INS -y git && \
     rm -rf /var/lib/apt/lists/* && \
     $UPD
 
+### config git ###
+RUN git config user.name secman_yo
+RUN git config user.email yo@secman.vercel.app
+
 # sudo
 RUN $UPD && $INS -y sudo && \
     adduser --disabled-password --gecos '' smx && \
@@ -65,7 +69,7 @@ RUN $UPD_s && \
 RUN curl -fsSL https://secman-team.github.io/install.sh | bash
 
 ### zsh ###
-RUN brew install zsh
+RUN $INS_s zsh
 ENV src=".zshrc"
 RUN zsh && \
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" && \
@@ -78,7 +82,6 @@ RUN sudo rm -rf $src
 RUN sudo rm -rf .oh-my-zsh/oh-my-zsh.sh
 
 # wget new files
-RUN wget $GITHUB_URL/secman-team/tools/HEAD/.zshrc && \
-    wget $GITHUB_URL/secman-team/tools/HEAD/oh-my-zsh.sh
+RUN wget https://secman-team.github.io/docker/.zshrc
 
-CMD /bin/bash -c "source .zshrc"
+# CMD /bin/bash -c "source .zshrc"
