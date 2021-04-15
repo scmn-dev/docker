@@ -60,11 +60,6 @@ RUN curl -sL https://deb.nodesource.com/setup_15.x -o nodesource_setup.sh && \
     sudo rm -rf nodesource_setup.sh && \
     $UPD_s
 
-# install pkgs
-RUN $UPD_s && \
-    brew install dep && \
-    $UPD_s
-
 ### secman ###
 RUN curl -fsSL https://secman-team.github.io/install.sh | bash
 
