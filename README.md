@@ -1,4 +1,4 @@
-# Secman Docker
+# Secman Docker 🐳
 
 Docker image of secman
 
