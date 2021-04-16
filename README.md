@@ -11,7 +11,7 @@ docker pull smcr/secman
 > from github packages
 
 ```bash
-docker pull docker.pkg.github.com/secman-team/secman-docker/secman:latest
+docker pull ghcr.io/secman-team/secman
 ```
 
 docker repo: _**https://hub.docker.com/r/smcr/secman**_
