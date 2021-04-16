@@ -5,7 +5,7 @@ Docker image of secman
 ## Pull
 
 ```bash
-docker pull secmanx/secman
+docker pull smcr/secman
 ```
 
 > from github packages
@@ -14,7 +14,7 @@ docker pull secmanx/secman
 docker pull docker.pkg.github.com/secman-team/secman-docker/secman:latest
 ```
 
-docker repo: _**https://hub.docker.com/r/secmanx/secman**_
+docker repo: _**https://hub.docker.com/r/smcr/secman**_
 
 ## Our Websites
 
