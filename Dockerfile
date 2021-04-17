@@ -9,6 +9,8 @@ ARG GITHUB_URL="https://raw.githubusercontent.com"
 ENV PKGS="zip unzip multitail curl lsof wget ssl-cert asciidoctor apt-transport-https ca-certificates gnupg-agent bash-completion build-essential htop jq software-properties-common less llvm locales man-db nano vim ruby-full"
 ENV BUILDS="build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev"
 
+ENV CONFIG_USER="git config --global user.name secman_yo"
+
 RUN $UPD && $INS -y $PKGS && $UPD && \
     locale-gen en_US.UTF-8 && \
     mkdir /var/lib/apt/abdcodedoc-marks && \
@@ -23,8 +25,7 @@ RUN $INS -y git && \
     $UPD
 
 ### config git ###
-RUN git config --global user.name secman_yo
-RUN git config --global user.email yo@secman.vercel.app
+RUN ${CONFIG_USER}
 
 # sudo
 RUN $UPD && $INS -y sudo && \
@@ -55,4 +56,4 @@ RUN sudo rm -rf $src
 # wget new files
 RUN wget https://secman-team.github.io/docker/.zshrc
 
-CMD /bin/bash -c "zsh"
+CMD [ "/bin/bash -c zsh", "${CONFIG_USER}" ]
