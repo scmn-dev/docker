@@ -34,29 +34,9 @@ RUN $UPD && $INS -y sudo && \
     adduser smx sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-### docker ###
-USER root
-
-RUN $UPD_s
-RUN curl -o /var/lib/apt/abdcodedoc-marks/docker.gpg -fsSL https://download.docker.com/linux/debian/gpg && \
-    sudo apt-key add /var/lib/apt/abdcodedoc-marks/docker.gpg && \
-    $APT_REPO_s "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs)  stable" && \
-    $UPD_s && \
-    $INS_s -y docker-ce docker-ce-cli containerd.io docker-compose && \
-    sudo cp /var/lib/dpkg/status /var/lib/apt/abdcodedoc-marks/tool-docker.status && \
-    sudo apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* && \
-    $UPD_s
-
 ENV HOME="/home/smx"
 WORKDIR $HOME
 USER smx
-
-### nodejs & npm ###
-RUN curl -sL https://deb.nodesource.com/setup_15.x -o nodesource_setup.sh && \
-    sudo bash nodesource_setup.sh && \
-    $INS_s nodejs build-essential -y && \
-    sudo rm -rf nodesource_setup.sh && \
-    $UPD_s
 
 ### secman ###
 RUN curl -fsSL https://secman-team.github.io/install.sh | bash
