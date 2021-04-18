@@ -24,13 +24,13 @@ RUN $INS -y git && \
 
 # sudo
 RUN $UPD && $INS -y sudo && \
-    adduser --disabled-password --gecos '' smx && \
-    adduser smx sudo && \
+    adduser --disabled-password --gecos '' secman_yo && \
+    adduser secman_yo sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
-ENV HOME="/home/smx"
+ENV HOME="/home/secman_yo"
 WORKDIR $HOME
-USER smx
+USER secman_yo
 
 ### secman ###
 RUN curl -fsSL https://secman-team.github.io/install.sh | bash
@@ -51,6 +51,8 @@ RUN sudo rm -rf $src
 # wget new files
 RUN wget https://secman-team.github.io/docker/.zshrc
 
-ENV CONFIG_USER="git config --global user.name secman_yo"
+CMD /bin/bash -c "zsh"
 
-ENTRYPOINT [ "zsh", "${CONFIG_USER}" ]
+RUN git config --global user.name secman_yo
+
+### end ###
