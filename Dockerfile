@@ -53,4 +53,4 @@ RUN wget https://secman-team.github.io/docker/.zshrc
 
 ENV CONFIG_USER="git config --global user.name secman_yo"
 
-CMD [ "/bin/bash -c zsh", "${CONFIG_USER}" ]
+ENTRYPOINT [ "zsh", "${CONFIG_USER}" ]
