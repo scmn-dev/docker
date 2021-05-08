@@ -18,6 +18,6 @@ docker repo: _**https://hub.docker.com/r/smcr/secman**_
 
 ## Our Websites
 
-- [**main website**](https://secman.vercel.app)
-- [**deps website**](https://secman-team.github.io)
-- [**changelog website**](https://secman-chlog.web.app)
+- [**main website**](https://secman.dev)
+- [**deps website**](https://deps.secman.dev)
+- [**changelog website**](https://changelog.secman.dev)
