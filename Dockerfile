@@ -5,7 +5,6 @@ ARG UPD="apt-get update"
 ARG UPD_s="sudo $UPD"
 ARG INS="apt-get install"
 ARG INS_s="sudo $INS"
-ARG GITHUB_URL="https://raw.githubusercontent.com"
 ENV PKGS="zip unzip multitail curl lsof wget ssl-cert asciidoctor apt-transport-https ca-certificates gnupg-agent bash-completion build-essential htop jq software-properties-common less llvm locales man-db nano vim ruby-full"
 ENV BUILDS="build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev"
 
@@ -49,7 +48,7 @@ RUN zsh && \
 RUN sudo rm -rf $src
 
 # wget new files
-RUN wget https://deps.secman.dev/docker/.zshrc
+RUN wget https://get.secman.dev/docker/.zshrc
 
 CMD /bin/bash -c "zsh"
 
