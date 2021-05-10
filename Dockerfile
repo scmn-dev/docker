@@ -32,7 +32,7 @@ WORKDIR $HOME
 USER secman_yo
 
 ### secman ###
-RUN curl -fsSL https://deps.secman.dev/install.sh | bash
+RUN curl -fsSL https://get.secman.dev/install.sh | bash
 
 ### zsh ###
 ENV src=".zshrc"
