@@ -32,7 +32,7 @@ WORKDIR $HOME
 USER secman_yo
 
 ### secman ###
-RUN curl -fsSL https://get.secman.dev/install.sh | bash
+RUN curl -fsSL https://cli.secman.dev/install.sh | bash
 
 ### zsh ###
 ENV src=".zshrc"
@@ -48,7 +48,7 @@ RUN zsh && \
 RUN sudo rm -rf $src
 
 # wget new files
-RUN wget https://get.secman.dev/docker/.zshrc
+RUN wget https://cli.secman.dev/docker/.zshrc
 
 CMD /bin/bash -c "zsh"
 
