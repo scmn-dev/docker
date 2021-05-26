@@ -1,5 +1,7 @@
 FROM debian:latest
 
+### start ###
+
 # variables
 ARG UPD="apt-get update"
 ARG UPD_s="sudo $UPD"
@@ -51,7 +53,5 @@ RUN sudo rm -rf $src
 RUN wget https://cli.secman.dev/docker/.zshrc
 
 CMD /bin/bash -c "zsh"
-
-RUN git config --global user.name secman_yo
 
 ### end ###
