@@ -46,12 +46,15 @@ RUN zsh && \
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# rm old files
+# rm old ~/.zshrc
 RUN sudo rm -rf $src
 
 # wget new files
-RUN wget https://cli.secman.dev/docker/.zshrc
+RUN wget https://docker.secman.dev/.zshrc
+RUN wget https://docker.secman.dev/README
 
 CMD /bin/bash -c "zsh"
+
+RUN cat README
 
 ### end ###
