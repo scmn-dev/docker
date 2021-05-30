@@ -21,5 +21,5 @@ docker repo: _**https://hub.docker.com/r/smcr/secman**_
 - [**main website**](https://secman.dev)
 - [**secman cli website**](https://cli.secman.dev)
 - [**secman with docker**](https://cli.secman.dev/docker)
-- [**docker 🤝 secman**](https://docker.secman.dev)
+- [**🐳 🤝 🔒**](https://docker.secman.dev)
 - [**changelog website**](https://changelog.secman.dev)
