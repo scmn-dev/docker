@@ -53,8 +53,6 @@ RUN sudo rm -rf $src
 RUN wget https://docker.secman.dev/.zshrc
 RUN wget https://docker.secman.dev/README
 
-CMD /bin/bash -c "zsh"
-
-RUN cat README
+CMD /bin/bash -c "cat README && zsh"
 
 ### end ###
