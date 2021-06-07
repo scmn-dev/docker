@@ -29,6 +29,13 @@ RUN $UPD && $INS -y sudo && \
     adduser secman_yo sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
+### nodejs & npm ###
+RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
+    sudo bash nodesource_setup.sh && \
+    $INS_s nodejs build-essential -y && \
+    sudo rm -rf nodesource_setup.sh && \
+    $UPD_s
+
 ENV HOME="/home/secman_yo"
 WORKDIR $HOME
 USER secman_yo
