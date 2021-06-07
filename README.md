@@ -2,16 +2,16 @@
 
 Docker image of secman
 
-## Pull
+## Run Containers
 
 ```bash
-docker pull smcr/secman
+docker run -it smcr/secman
 ```
 
 > from github packages
 
 ```bash
-docker pull ghcr.io/secman-team/secman
+docker run -it ghcr.io/secman-team/secman
 ```
 
 docker repo: _**https://hub.docker.com/r/smcr/secman**_
