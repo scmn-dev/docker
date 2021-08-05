@@ -2,7 +2,7 @@ FROM debian:latest
 
 ### start ###
 
-# variables
+### variables ###
 ARG UPD="apt-get update"
 ARG UPD_s="sudo $UPD"
 ARG INS="apt-get install"
@@ -23,7 +23,7 @@ RUN $INS -y git && \
     rm -rf /var/lib/apt/lists/* && \
     $UPD
 
-# sudo
+### sudo ###
 RUN $UPD && $INS -y sudo && \
     adduser --disabled-password --gecos '' secman_yo && \
     adduser secman_yo sudo && \
@@ -53,10 +53,10 @@ RUN zsh && \
     git clone https://github.com/zsh-users/zsh-syntax-highlighting ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && \
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# rm old ~/.zshrc
+### rm old ~/.zshrc ###
 RUN sudo rm -rf $src
 
-# wget new files
+### wget new files ###
 RUN wget https://docker.secman.dev/.zshrc
 RUN wget https://docker.secman.dev/README
 
