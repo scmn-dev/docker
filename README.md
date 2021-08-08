@@ -11,7 +11,7 @@ docker run -it smcr/secman
 > from github packages
 
 ```bash
-docker run -it ghcr.io/secman-team/secman
+docker run -it ghcr.io/scmn-dev/secman
 ```
 
 docker repo: _**https://hub.docker.com/r/smcr/secman**_
