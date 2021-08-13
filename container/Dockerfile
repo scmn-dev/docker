@@ -1,6 +1,8 @@
+### image name: smcr/secman ###
+
 FROM debian:latest
 
-### start ###
+### begin ###
 
 ### variables ###
 ARG UPD="apt-get update"
