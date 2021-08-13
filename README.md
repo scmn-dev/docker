@@ -1,24 +1,28 @@
-# Secman Docker 🐳
+# Secman Docker
 
-Docker image of secman
+🐳 Official Docker Image for Secman.
 
 ## Run Containers
+
+> `secman cli` image
+
+```bash
+docker run -it smcr/secman-cli
+```
+
+see [**secman cli docs**](https://docker.secman.dev/sm-cli)
+
+> `secman container` image
 
 ```bash
 docker run -it smcr/secman
 ```
 
-> from github packages
+see [**secman container docs**](https://docker.secman.dev/sm-container)
 
-```bash
-docker run -it ghcr.io/scmn-dev/secman
-```
+## Some Resources
 
-docker repo: _**https://hub.docker.com/r/smcr/secman**_
-
-## Our Websites
-
-- [**main website**](https://secman.dev)
+- [**secman website**](https://secman.dev)
 - [**secman cli website**](https://cli.secman.dev)
 - [**🐳 🤝 🔒**](https://docker.secman.dev)
 - [**changelog website**](https://changelog.secman.dev)
