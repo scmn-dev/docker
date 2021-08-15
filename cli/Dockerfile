@@ -1,15 +1,14 @@
 ### image name: smcr/secman-cli ###
 
-FROM alpine:latest
+FROM debian
 
 ### begin ###
 
-RUN apk update && apk upgrade && \
-  apk add --no-cache ca-certificates wget
+RUN apt-get update && apt-get upgrade
 
-RUN wget https://docker.secman.dev/secman
-RUN mv secman /usr/local/bin
+# run `make pull_secman` before this step
+COPY ../secman /bin/secman
 
-ENTRYPOINT ["/usr/local/bin/secman"]
+ENTRYPOINT ["/bin/secman"]
 
 ### end ###
