@@ -9,7 +9,7 @@ sm_cli:
 
 sm_container:
 		@cd container && \
-		docker build -t smcr/secman-container . && \
+		docker build -t smcr/secman . && \
 		docker push smcr/secman-container
 
 pull_secman:
