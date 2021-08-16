@@ -8,6 +8,9 @@ define pull_secman
 		chmod 755 secman
 endef
 
+pull:
+		$(call pull_secman)
+
 sm_cli:
 		$(call pull_secman)
 
