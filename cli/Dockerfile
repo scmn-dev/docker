@@ -4,7 +4,7 @@ FROM debian
 
 ### begin ###
 
-RUN apt-get update && apt-get upgrade
+RUN apt-get update -y && apt-get upgrade -y
 
 # run `make pull_secman` before this step
 COPY secman /bin/secman
