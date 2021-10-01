@@ -43,7 +43,7 @@ WORKDIR $HOME
 USER secman_yo
 
 ### secman ###
-RUN curl -fsSL https://cli.secman.dev/unix | bash
+RUN curl -fsSL https://unix.secman.dev | bash
 
 ### zsh ###
 ENV src=".zshrc"
