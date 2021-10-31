@@ -23,6 +23,5 @@ see [**secman container docs**](https://docker.secman.dev/docs/sm-container)
 ## Some Resources
 
 - [**secman website**](https://secman.dev)
-- [**secman cli website**](https://cli.secman.dev)
 - [**🐳 🤝 🔒**](https://docker.secman.dev)
-- [**changelog website**](https://changelog.secman.dev)
+- [**changelog**](https://secman.dev/changelog)
