@@ -32,18 +32,20 @@ RUN $UPD && $INS -y sudo && \
     echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
 ### nodejs & npm ###
-RUN curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh && \
+RUN curl -sL https://deb.nodesource.com/setup_17.x -o nodesource_setup.sh && \
     sudo bash nodesource_setup.sh && \
     $INS_s nodejs build-essential -y && \
     sudo rm -rf nodesource_setup.sh && \
     $UPD_s
+RUN npm i -g npm@latest
 
 ENV HOME="/home/secman_yo"
 WORKDIR $HOME
 USER secman_yo
 
 ### secman ###
-RUN curl -fsSL https://unix.secman.dev | bash
+RUN sudo npm i -g secman
+RUN secman init
 
 ### zsh ###
 ENV src=".zshrc"

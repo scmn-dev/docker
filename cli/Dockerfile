@@ -5,10 +5,13 @@ FROM debian
 ### begin ###
 
 RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get install -y npm nodejs
+RUN apt-get install -y curl sudo wget
 
 # run `make pull_secman` before this step
-COPY secman /bin/secman
+RUN npm i -g secman
+RUN secman init
 
-ENTRYPOINT ["/bin/secman"]
+ENTRYPOINT ["secman"]
 
 ### end ###
