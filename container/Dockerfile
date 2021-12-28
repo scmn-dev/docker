@@ -43,6 +43,8 @@ ENV HOME="/home/secman_yo"
 WORKDIR $HOME
 USER secman_yo
 
+RUN echo "installing"
+
 ### secman ###
 RUN sudo npm i -g secman@latest
 RUN secman init
