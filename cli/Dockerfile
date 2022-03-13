@@ -8,8 +8,7 @@ RUN apt-get update -y && apt-get upgrade -y
 RUN apt-get install -y npm nodejs
 RUN apt-get install -y curl sudo wget
 
-# run `make pull_secman` before this step
-RUN npm i -g secman
+RUN curl -sL https://u.secman.dev | bash 
 RUN secman init
 
 ENTRYPOINT ["secman"]

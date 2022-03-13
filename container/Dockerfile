@@ -5,12 +5,13 @@ FROM debian:latest
 ### begin ###
 
 ### variables ###
-ARG UPD="apt-get update"
-ARG UPD_s="sudo $UPD"
-ARG INS="apt-get install"
-ARG INS_s="sudo $INS"
+ENV UPD="apt-get update"
+ENV UPD_s="sudo $UPD"
+ENV INS="apt-get install"
+ENV INS_s="sudo $INS"
 ENV PKGS="zip unzip multitail curl lsof wget ssl-cert asciidoctor apt-transport-https ca-certificates gnupg-agent bash-completion build-essential htop jq software-properties-common less llvm locales man-db nano vim ruby-full"
 ENV BUILDS="build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libsqlite3-dev libreadline-dev libffi-dev libbz2-dev"
+ENV SECMAN_DOCKER_UTILS_URL="https://scmn-dev.github.io/secman/scripts/docker"
 
 RUN $UPD && $INS -y $PKGS && $UPD && \
     locale-gen en_US.UTF-8 && \
@@ -46,7 +47,7 @@ USER secman_yo
 RUN echo "installing"
 
 ### secman ###
-RUN sudo npm i -g secman@latest
+RUN sudo curl -sL https://u.secman.dev | bash
 RUN secman init
 
 ### zsh ###
@@ -63,8 +64,8 @@ RUN zsh && \
 RUN sudo rm -rf $src
 
 ### wget new files ###
-RUN wget https://docker.secman.dev/.zshrc
-RUN wget https://docker.secman.dev/README
+RUN wget $SECMAN_DOCKER_UTILS_URL/zshrc -o $src
+RUN wget $SECMAN_DOCKER_UTILS_URL/README
 
 CMD /bin/bash -c "cat README && zsh"
 
