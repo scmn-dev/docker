@@ -1,6 +1,6 @@
 ### image name: smcr/secman ###
 
-FROM debian:latest
+FROM debian:11
 
 ### begin ###
 

@@ -1,6 +1,6 @@
 ### image name: smcr/secman-cli ###
 
-FROM debian
+FROM debian:11
 
 ### begin ###
 
