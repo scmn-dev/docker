@@ -1,4 +1,6 @@
-# Secman Docker
+🚧 **MOVED TO [secman/docker](https://github.com/scmn-dev/secman/tree/main/docker)** 🚧
+
+---
 
 🐳 Official Docker Image for Secman.
 
@@ -19,4 +21,3 @@ docker run -it smcr/secman
 ## Some Resources
 
 - [**secman website**](https://secman.dev)
-- [**changelog**](https://secman.dev/changelog)
